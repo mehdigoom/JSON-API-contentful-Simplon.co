@@ -99,4 +99,4 @@ function fetchEntriesForContentType (contentType) {
 }
 
 // Start the boilerplate code
-//runBoilerplate()
+runBoilerplate()
