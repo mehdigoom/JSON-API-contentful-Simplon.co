@@ -42,7 +42,7 @@ function displayContentTypes () {
   .then((contentTypes) => {
     // Display a table with Content Type information
     const table = new Table({
-      head: ['Id', 'Title', 'Fields']
+      head: ['Id', 'Title', 'Fields','article']
     })
     contentTypes.forEach((contentType) => {
       const fieldNames = contentType.fields
@@ -66,10 +66,10 @@ function displayEntries (contentTypes) {
 
       // Display a table with Entry information
       const table = new Table({
-        head: ['Id', 'Title']
+        head: ['Id', 'Title','article']
       })
       entries.forEach((entry) => {
-        table.push([entry.sys.id, entry.fields[contentType.displayField] || '[empty]'])
+        table.push([entry.sys.id, entry.fields[contentType.displayField],entry.article || '[empty]'])
       })
       console.log(table.toString())
     })
