@@ -48,7 +48,7 @@ function displayContentTypes () {
       const fieldNames = contentType.fields
         .map((field) => field.name)
         .sort()
-      table.push([contentType.sys.id, contentType.name, fieldNames.join(', ')])
+      table.push([contentType.sys.id, contentType.name,contentType.article, fieldNames.join(', ')])
     })
     console.log(table.toString())
 
@@ -69,7 +69,7 @@ function displayEntries (contentTypes) {
         head: ['Id', 'Title','article']
       })
       entries.forEach((entry) => {
-        table.push([entry.sys.id, entry.fields[contentType.displayField],entry.article || '[empty]'])
+        table.push([entry.sys.id, entry.fields[contentType.displayField]|| '[empty]'])
       })
       console.log(table.toString())
     })
